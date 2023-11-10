@@ -1,0 +1,13 @@
+body {
+    font-family: "HancomSans";
+}
+
+.isaac {
+    position: fixed;
+    right: 5%;
+}
+
+@font-face {
+    font-family: "HancomSans";
+    src: url("HancomSans-Semibold.ttf") format("truetype");
+}
