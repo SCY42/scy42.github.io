@@ -1,5 +1,5 @@
 body {
-    font-family: "HancomSans";
+    font-family: HancomSans;
 }
 
 .isaac {
@@ -8,6 +8,6 @@ body {
 }
 
 @font-face {
-    font-family: "HancomSans";
+    font-family: HancomSans;
     src: url("HancomSans-Semibold.ttf") format("truetype");
 }
