@@ -7,8 +7,9 @@
 </head>
 
 <body>
-    <img class="isaac" src="images/isaac.gif">
-    <img class="slugcatrainbow" src="images/SlugParty.gif">
+    <img id="isaac" src="images/isaac.gif">
+    <img id="slugcat" src="images/SlugParty.gif"
+    onclick="toggleRainbow()">
 
 <div class="subjectTitle" onclick="toggleCollapse('korean')">
     <h1>국어</h1>
@@ -110,7 +111,26 @@
         } 
       });
     }
-    </script>
+
+    function toggleRainbow() {
+        titles = document.getElementsByClassName("subjectTitle");
+        contents = document.getElementsByClassName("coll");
+
+        for (var i = 0; i < titles.length; i++) {
+            titles[i].classList.toggle("rainbow");
+        }
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].classList.toggle("rainbowLowOpacity");
+        }
+
+        scug = document.getElementById("slugcat")
+        if (scug.getAttribute("src") == "images/SlugParty.gif")
+            scug.setAttribute("src", "images/SlugNotParty.gif");
+        else
+            scug.setAttribute("src", "images/SlugParty.gif");
+    }
+
+</script>
 
 </body>
 
