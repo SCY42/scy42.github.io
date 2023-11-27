@@ -26,9 +26,9 @@ body {
 
 .subjectTitle {
     background-color: gold;
-    text-align: center;
     max-width: 500px;
     margin: auto;
+    text-align: center;
 }
 
 .coll {
