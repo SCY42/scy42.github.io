@@ -2,15 +2,16 @@
 <title>레몬님 수능 1년 벼락치기 프로젝트</title>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <img class="isaac" src="images/isaac.gif">
-    <img class="slugcatrainbow" src="images/SlugParty.gif">
+    <img id="isaac" src="images/isaac.gif">
+    <img id="slugcat" src="images/SlugParty.gif"
+    onclick="toggleRainbow()">
 
-<div class="subjectTitle" onclick="toggleCollapse('korean')">
+<div class="subjectTitle">
     <h1>국어</h1>
 </div>
 <div class="coll" id="korean">
@@ -29,11 +30,13 @@
     <h2>언매 or 화작</h2>
 </div>
 
-<div class="subjectTitle" onclick="toggleCollapse('math')">
+<div class="subjectTitle">
     <h1>수학</h1>
 </div>
 <div class="coll" id="math">
-    일단 중학교 수학부터 익힐 것!
+    <ul>
+        <li>일단 중학교 수학부터 익힐 것!</li>
+    </ul>
     <h2>수학1</h2>
         <h3>수능특강</h3>
             <ul>
@@ -54,7 +57,7 @@
             </ul>
 </div>
 
-<div class="subjectTitle" onclick="toggleCollapse('english')">
+<div class="subjectTitle">
     <h1>영어</h1>
 </div>
 <div class="coll" id="english">
@@ -73,14 +76,16 @@
 (나중에 생각하기)
 </div>
 
-<div class="subjectTitle" onclick="toggleCollapse('history')">
+<div class="subjectTitle">
     <h1>한국사</h1>
 </div>
 <div class="coll" id="history">
-    너무 걱정하지 말기
+    <ul>
+        <li>너무 걱정하지 말기</li>
+    </ul>
 </div>
 
-<div class="subjectTitle" onclick="toggleCollapse('society')">
+<div class="subjectTitle">
     <h1>사탐</h1>
 </div>
 <div class="coll" id="society">
@@ -110,7 +115,26 @@
         } 
       });
     }
-    </script>
+
+    function toggleRainbow() {
+        titles = document.getElementsByClassName("subjectTitle");
+        contents = document.getElementsByClassName("coll");
+
+        for (var i = 0; i < titles.length; i++) {
+            titles[i].classList.toggle("rainbow");
+        }
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].classList.toggle("rainbowLowOpacity");
+        }
+
+        scug = document.getElementById("slugcat")
+        if (scug.getAttribute("src") == "images/SlugParty.gif")
+            scug.setAttribute("src", "images/SlugNotParty.gif");
+        else
+            scug.setAttribute("src", "images/SlugParty.gif");
+    }
+
+</script>
 
 </body>
 
