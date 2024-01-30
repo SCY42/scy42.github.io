@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<title>42스핀</title>
+
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <script>
+        var spinCount = 0;
+        
+        function unspin(element) {
+            element.className = null;
+            element.setAttribute("onclick", "spin(this);");
+        }
+        
+        function spin(element) {
+            spinCount += 1;
+            element.className = "anim";
+            element.removeAttribute("onclick");
+            setTimeout(unspin, 300, element);
+            document.getElementById("spinCount").textContent = spinCount;
+        }
+    </script>
+
+    <img id="fourtyTwo" src="images/42_2.png" onclick="spin(this)">
+    <span id="spinCount"></span>
+</body>
+
+
+</html>
